@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+     
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>Hello World</title>
+		<script src="scripts/jquery.min.js"></script>
+		<script src="scripts/jQuery.tubeplayer.min.js"></script>
+		<script>
+		$(document).ready(function(){
+      $('#volumeSlider').toggle();
+});
+		
+		</script>
+    </head>
+    <body>
+   
+	 
+          <div id="container">
+  
+    <audio id="audio">
+      <source id="sourceMP3" src="music/orsh_mix_1.mp3" type="audio/ogg">
+    </audio>
+      
+    <div id="wrapper">
+      <!-- Track information-->
+      <center><div id="trackInfo">
+        <div id="titleText">orsh mix 1</div>
+        <div id="albumText">Unknown Album</div>
+        <div id="artistText">orsh</div>
+      </div> 
+      <div id="albumart">
+	  <div class="auto-resizable-iframe">
+	  <div id='youtube-player-container'> </div>
+	  
+	  <input id="name"><br/>
+     <button id="button">button</button>
+  <script>
+  $(function() {
+      $("#button").click( function()
+           {
+             var content = $('#name').val();
+              alert(content);
+if ($("iframe").length < 0){
+console.log('uo');
+  // do something here
+   $('iframe').remove();
+  jQuery("#youtube-player-container").tubeplayer({
+	width: 600, // the width of the player
+	height: 450, // the height of the player
+	allowFullScreen: "true", // true by default, allow user to go full screen
+	initialVideo: content, // the video that is loaded into the player
+	preferredQuality: "default",// preferred quality: default, small, medium, large, hd720
+	onPlay: function(id){}, // after the play method is called
+	onPause: function(){}, // after the pause method is called
+	onStop: function(){}, // after the player is stopped
+	onSeek: function(time){}, // after the video has been seeked to a defined point
+	onMute: function(){}, // after the player is muted
+	onUnMute: function(){} // after the player is unmuted
+});
+} else if ($(".jquery-youtube-tubeplayer").length =1){
+  // do something here
+  console.log('yo');
+  $('iframe').remove();
+    jQuery("#youtube-player-container").tubeplayer({
+	width: 600, // the width of the player
+	height: 450, // the height of the player
+	allowFullScreen: "true", // true by default, allow user to go full screen
+	initialVideo: content, // the video that is loaded into the player
+	preferredQuality: "default",// preferred quality: default, small, medium, large, hd720
+	onPlay: function(id){}, // after the play method is called
+	onPause: function(){}, // after the pause method is called
+	onStop: function(){}, // after the player is stopped
+	onSeek: function(time){}, // after the video has been seeked to a defined point
+	onMute: function(){}, // after the player is muted
+	onUnMute: function(){} // after the player is unmuted
+});
+}
+  
+           }
+      );
+});	
+  </script>
+</div>
+	  <!-- img style="width:100%; max-width:400px;" src="./music/tekno.png"-->
+	  </div> </center>
+	  <div id="ccontainer">
+      <div id="timeInfo">
+        <div><div id="timeBar"><div class="filler"></div></div></div>
+            <div id="timeText">0:00</div>
+      </div>
+      
+      <!-- Controls -->
+      <div id="controls" class="footer">
+	  
+        <a href="#" class="button bttmbttn bttmbttn-1" id="previousBtn"><img src="icons/32/rewind-32.png"></a>
+		
+		<a href="#" class="button bttmbttn bttmbttn-1" id="playBtn"><img src="icons/32/play-32.png"></a>
+		
+        <a href="#" class="button bttmbttn bttmbttn-1" id="nextBtn"><img src="icons/32/forward-32.png"></a>
+        
+		
+        <div onclick=" $('#volumeSlider').toggle(1000); "class="button bttmbttn bttmbttn-1"  style="display:none;float:right; width:50px!important; 
+    height:45px;    
+    
+	padding: 5px 5px!important;"><img id="speaker" width="50px" height="30px" src="icons/32/volume-32.png"><div id="volumeSlider" style="float:right;height:50px; width:50px"><div class="filler"></div></div></div>
+      </div> </div>
+  </div>
+  <form method="get" action="./music/orsh_mix_1.mp3">
+<!--button type="submit">Download!</button-->
+</form>
+  
+  <script src="scripts/sliderfy.js"></script>
+  <script src="scripts/playlist.js"></script>
+  <script src="scripts/controls.js"></script>
+  
+  </div>
+ 
+       
+        
+		
+         <script type="text/javascript" src="cordova.js"></script><script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
